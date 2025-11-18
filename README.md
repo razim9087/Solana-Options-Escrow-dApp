@@ -404,17 +404,40 @@ Free up disk space after testing:
 - IDL and TypeScript types
 - All source code
 
+## 🖥️ Frontend Application
+
+A complete React-based web interface is now available in the `app/` directory!
+
+### Features
+- 🎨 Modern, user-friendly interface
+- 💼 Phantom wallet integration
+- 📊 Create Call/Put options with custom parameters
+- 🔍 Browse and purchase available options
+- ⚡ Manage owned options (exercise, settle, delist)
+- 📱 Responsive design
+
+### Quick Start
+```bash
+cd app
+npm install
+npm start
+```
+
+Visit `http://localhost:3000` to use the application.
+
+For detailed instructions, see [app/README.md](app/README.md) and [FRONTEND_GUIDE.md](FRONTEND_GUIDE.md).
+
 ## 🗺️ Roadmap
 
 ### Future Enhancements
 
+- [x] Frontend UI (React/Next.js) ✅
 - [ ] American options (early exercise)
 - [ ] Automated keeper network for settlements
 - [ ] AMM for option pricing
 - [ ] Multi-asset portfolio management
 - [ ] Cross-chain oracle integration
 - [ ] Governance DAO for parameters
-- [ ] Frontend UI (React/Next.js)
 
 ## 🤝 Contributing
 
