@@ -9,6 +9,7 @@ target/bpf-solana-solana/
 target/sbf-solana-solana/
 **/*.rs.bk
 Cargo.lock
+app/build/
 
 # Test artifacts
 test-ledger/

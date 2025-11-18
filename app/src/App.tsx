@@ -1,20 +1,37 @@
-import React, { useState } from 'react';
-import WalletConnect from './components/WalletConnect';
-import Transaction from './components/Transaction';
+import React, { FC, useMemo } from 'react';
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
+import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
+import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
+import { clusterApiUrl } from '@solana/web3.js';
+import OptionsTrading from './components/OptionsTrading';
+import './App.css';
 
-const App = () => {
-  const [userAddress, setUserAddress] = useState(null);
+require('@solana/wallet-adapter-react-ui/styles.css');
 
-  const handleWalletConnect = (address) => {
-    setUserAddress(address);
-  };
+const App: FC = () => {
+  // Use devnet for development, can be changed to mainnet-beta for production
+  const network = WalletAdapterNetwork.Devnet;
+  
+  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  
+  const wallets = useMemo(
+    () => [
+      new PhantomWalletAdapter(),
+    ],
+    []
+  );
 
   return (
-    <div>
-      <h1>Solana Escrow DApp</h1>
-      <WalletConnect onConnect={handleWalletConnect} />
-      {userAddress && <Transaction userAddress={userAddress} />}
-    </div>
+    <ConnectionProvider endpoint={endpoint}>
+      <WalletProvider wallets={wallets} autoConnect>
+        <WalletModalProvider>
+          <div className="App">
+            <OptionsTrading />
+          </div>
+        </WalletModalProvider>
+      </WalletProvider>
+    </ConnectionProvider>
   );
 };
 
