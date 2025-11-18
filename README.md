@@ -283,6 +283,40 @@ ts-mocha -p ./tsconfig.json tests/aapl_historical.ts
 ❌ 0 Failures
 ```
 
+## 🎨 Frontend Application
+
+A modern, neon-themed React frontend is now available in the `app/` directory!
+
+### Features
+- **Vibrant Neon Design**: Futuristic UI with cyan, magenta, purple color scheme
+- **Multi-Wallet Support**: Phantom, Solflare, and Torus integration
+- **Full Functionality**: Create, browse, purchase, and manage options
+- **Real-time Updates**: Live blockchain data integration
+- **Responsive Design**: Works on desktop and mobile
+
+### Quick Start
+
+```bash
+cd app
+npm install
+npm start
+```
+
+Visit `http://localhost:3000` to access the frontend.
+
+For detailed frontend documentation, see [app/README.md](app/README.md).
+
+### Screenshots
+
+**Dashboard**
+![Dashboard](https://github.com/user-attachments/assets/6d458d75-3db8-4bc6-bfad-5713fb624ed0)
+
+**Create Options**
+![Create Option](https://github.com/user-attachments/assets/29442c7e-a1b3-49c7-bd51-e0c0ad958415)
+
+**Marketplace**
+![Marketplace](https://github.com/user-attachments/assets/60b64a9c-1271-4885-b240-a510bc1550db)
+
 ## 🚢 Deployment
 
 ### Deploy to Devnet
@@ -408,13 +442,13 @@ Free up disk space after testing:
 
 ### Future Enhancements
 
+- [x] **Frontend UI (React)** - Complete with neon-themed interface ✨
 - [ ] American options (early exercise)
 - [ ] Automated keeper network for settlements
 - [ ] AMM for option pricing
 - [ ] Multi-asset portfolio management
 - [ ] Cross-chain oracle integration
 - [ ] Governance DAO for parameters
-- [ ] Frontend UI (React/Next.js)
 
 ## 🤝 Contributing
 
